@@ -1,3 +1,5 @@
-in
-out
+out/*
+recomp/*
+listings/*
 .venv
+__pycache__
