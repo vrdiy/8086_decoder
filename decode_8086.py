@@ -577,6 +577,8 @@ def main():
         print(f'-> "{file_path}"')
         result = decode_8086(file_path)
         result = add_spacing(result)
+        if not os.path.exists('out'):
+            os.makedirs('out')
         write_to_file(result,os.path.join('out/'f'{name}.asm'))
         print('------------------')
         print(result)

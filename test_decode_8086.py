@@ -8,6 +8,14 @@ from str_util import add_spacing
 class TestDecode8086(unittest.TestCase):
     def test_listings(self):
         TESTS_DIR = 'tests'
+        if not os.path.exists(f'{TESTS_DIR}'):
+            os.makedirs(f'{TESTS_DIR}')
+        if not os.path.exists(f'{TESTS_DIR}/listings'):
+            os.makedirs(f'{TESTS_DIR}/listings')
+        if not os.path.exists(f'{TESTS_DIR}/out'):
+            os.makedirs(f'{TESTS_DIR}/out')
+        if not os.path.exists(f'{TESTS_DIR}/recomp'):
+            os.makedirs(f'{TESTS_DIR}/recomp')
         listings = os.listdir(f'{TESTS_DIR}/listings')
         binaries : list[str] = []
         for path in listings:
